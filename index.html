@@ -13,6 +13,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- Feather Icons CDN -->
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
     <header class="container">
@@ -84,20 +90,43 @@
             </div>
           </a>
 
-          <div class="project">
-            <a
-              href="https://drive.google.com/file/d/1epUp-hYHOGmht10M7pKRpb4UnGFmAqpa/view?usp=sharing"
-              target="_blank"
-            >
+          <div class="project-wrapper" id="things-wrapper">
+            <div class="project" id="things-register">
               <img src="img/thingsregister.png" alt="ThingsRegister" />
-            </a>
-            <h3>ThingsRegister</h3>
-            <p>
-              Aplicación de escritorio desarrollada en Python que simula una
-              bitácora personal. Simple, funcional y directa. Ideal para
-              organizar tareas sin distracciones, demostrando cómo el software
-              puede ser útil sin complicarse.
-            </p>
+              <h3>ThingsRegister</h3>
+              <p>
+                Aplicación de escritorio desarrollada en Python que simula una
+                bitácora personal. Simple, funcional y directa. Ideal para
+                organizar tareas sin distracciones, demostrando cómo el software
+                puede ser útil sin complicarse.
+              </p>
+            </div>
+            <div class="button-group">
+              <a
+                href="https://github.com/RodrigoNahuelR/ThingsRegister/releases/download/thingsregister/ThinsRegister-windows.exe"
+                download
+                class="cta-button"
+                title="Descargar para Windows"
+              >
+                <i class="fab fa-windows"></i> Descargar
+              </a>
+              <a
+                href="https://github.com/RodrigoNahuelR/ThingsRegister/releases/download/thingsregister/ThingsRegister-linux"
+                download
+                class="cta-button"
+                title="Descargar para Linux"
+              >
+                <i class="fab fa-linux"></i> Descargar
+              </a>
+              <a
+                href="https://github.com/RodrigoNahuelR/ThingsRegister"
+                target="_blank"
+                class="cta-button"
+                title="Repositorio en GitHub"
+              >
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -156,5 +185,10 @@
     <footer>
       <p>&copy; 2025 Rodrigo Rosso</p>
     </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+      feather.replace(); // Inicializa los iconos feather
+    </script>
   </body>
 </html>

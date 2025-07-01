@@ -1,26 +1,17 @@
-// Función para expandir y centrar la sección
-function expandSection(section) {
-  // Si la sección está expandida, la contraemos
-  if (section.classList.contains("expanded")) {
-    section.classList.remove("expanded");
-  } else {
-    // Si está contraída, la expandimos y mostramos más información
-    document
-      .querySelectorAll(".expandable")
-      .forEach((sec) => sec.classList.remove("expanded")); // Cerrar otras secciones
-    section.classList.add("expanded");
+document.addEventListener("DOMContentLoaded", function () {
+  const thingsCard = document.getElementById("things-register");
+  const wrapper = thingsCard.closest(".project-wrapper");
 
-    // Centrar la sección expandida en la pantalla, asegurando que el inicio quede visible
-    section.scrollIntoView({
-      behavior: "smooth",
-      block: "start", // Alinea la parte superior de la sección con la parte superior del viewport
-    });
-  }
-}
+  thingsCard.style.cursor = "pointer";
+  thingsCard.addEventListener("click", function (e) {
+    e.stopPropagation();
+    wrapper.classList.toggle("show-buttons");
+  });
 
-// Asignar el evento de clic a todas las secciones
-document.querySelectorAll(".expandable").forEach((section) => {
-  section.addEventListener("click", function () {
-    expandSection(section);
+  // Optional: Hide buttons if click outside
+  document.addEventListener("click", function (e) {
+    if (!wrapper.contains(e.target)) {
+      wrapper.classList.remove("show-buttons");
+    }
   });
 });

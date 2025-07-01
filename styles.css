@@ -1,10 +1,9 @@
-/* Tipografía y colores base */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600&display=swap");
 
 :root {
   --color-bg: #121826;
   --color-text: #f1f5f9;
-  --color-accent: #4ade80; /* verde ácido */
+  --color-accent: #4ade80;
   --color-accent-hover: #22c55e;
   --color-muted: #94a3b8;
   --max-width: 700px;
@@ -32,7 +31,6 @@ body {
   padding: 2rem 1rem;
 }
 
-/* Header */
 header.container {
   text-align: center;
   padding-top: 3rem;
@@ -58,7 +56,6 @@ header p.tagline {
   text-shadow: 0 0 8px var(--color-accent);
 }
 
-/* Section Titles */
 h2 {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
@@ -71,14 +68,12 @@ h2 {
   color: var(--color-text);
 }
 
-/* Section Content */
 p {
   margin-top: 0;
   margin-bottom: 1.5rem;
   color: var(--color-text);
 }
 
-/* Lists */
 ul {
   padding-left: 1.2rem;
   margin-top: 0;
@@ -91,32 +86,74 @@ ul li {
   font-weight: 500;
 }
 
-/* Strong emphasis */
 strong {
   color: var(--color-accent);
 }
 
-/* Project grid */
+/* --- UNIFICAR TAMAÑO DE TODAS LAS TARJETAS DE PROYECTO --- */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
   margin-top: 1rem;
 }
 
-.project {
+.project,
+#things-register {
+  width: 320px;
+  min-width: 320px;
+  max-width: 340px;
+  min-height: 420px;
+  height: 100%;
   background: #1c2240;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 215, 130, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: default;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.project:hover {
-  transform: translateY(-8px) rotate(-1deg);
-  box-shadow: 0 10px 20px rgba(0, 215, 130, 0.3);
-  cursor: pointer;
+.project-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 2rem; /* Minimal gap for close spacing */
+  margin-top: 0;
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  justify-content: flex-start; /* No space-between */
+}
+
+/* Hide button group by default, show on .show-buttons */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem; /* Less gap between buttons */
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 0; /* No extra margin */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  visibility: hidden;
+  height: 100%;
+  width: auto; /* Remove min-width */
+}
+
+.project-wrapper.show-buttons .button-group {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+/* Make project take available space */
+.project {
+  flex: 1 1 0;
 }
 
 .project img {
@@ -125,6 +162,15 @@ strong {
   margin-bottom: 1rem;
   filter: drop-shadow(0 0 3px var(--color-accent));
   transition: filter 0.3s ease;
+  object-fit: cover;
+  max-height: 160px;
+  flex-shrink: 0;
+}
+
+.project:hover {
+  transform: translateY(-8px) rotate(-1deg);
+  box-shadow: 0 10px 20px rgba(0, 215, 130, 0.3);
+  cursor: pointer;
 }
 
 .project:hover img {
@@ -138,43 +184,79 @@ strong {
   font-weight: 600;
   font-size: 1.4rem;
   margin-bottom: 0.7rem;
+  flex-shrink: 0;
 }
 
+.project p {
+  flex-grow: 1;
+  margin-bottom: 0;
+  color: var(--color-text);
+}
+
+/* Enlace que envuelve el proyecto */
 .link-project {
   color: var(--color-accent);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
+  display: block;
 }
 
-/* Diferencial Section */
-#diferencial p {
-  font-style: italic;
-  color: var(--color-text);
-  max-width: var(--max-width);
-}
-
-/* CTA Button */
+/* --- BOTÓN DESCARGAR CV ESTILO CONSISTENTE --- */
 .cta-button {
-  border: none;
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.8rem 2rem;
-  background-color: var(--color-accent);
-  color: var(--color-bg);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 40px;
   font-weight: 700;
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.1rem;
-  border-radius: 40px;
-  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent) 60%,
+    var(--color-accent-hover) 100%
+  );
+  color: var(--color-bg);
   box-shadow: 0 0 15px var(--color-accent);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
   user-select: none;
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  margin-top: 1.2rem;
 }
 
-.cta-button:hover {
-  background-color: var(--color-accent-hover);
+.cta-button:hover,
+.cta-button:focus {
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-hover) 60%,
+    var(--color-accent) 100%
+  );
+  color: var(--color-bg);
   box-shadow: 0 0 25px var(--color-accent-hover);
+  text-decoration: none;
+  outline: none;
+}
+
+.cta-button i {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+/* --- GRUPO DE BOTONES DE PROYECTO --- */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem; /* Less gap between buttons */
+  margin-top: 1.2rem;
+  min-width: 140px;
+}
+
+.project-wrapper.show-buttons .button-group {
+  display: flex;
 }
 
 /* Contact list */
@@ -201,7 +283,6 @@ strong {
   text-decoration: underline;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 1rem 0;
@@ -211,7 +292,6 @@ footer {
   user-select: none;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   header h1 {
     font-size: 2.4rem;
@@ -221,5 +301,46 @@ footer {
   }
   body {
     font-size: 16px;
+  }
+
+  .project-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .project,
+  #things-register,
+  .project-wrapper {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: auto;
+  }
+  .button-group {
+    flex-direction: row;
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .button-group a.cta-button {
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-wrapper {
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    gap: 1rem;
+  }
+  .button-group {
+    margin-left: 0;
+    margin-top: 1rem;
+    align-items: stretch;
+    width: 100%;
   }
 }
