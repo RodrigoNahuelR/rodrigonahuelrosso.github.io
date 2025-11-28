@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Portfolio de Rodrigo Rosso | Backend Developer que une precisión técnica con visión creativa. Soluciones que funcionan y sorprenden."
+      content="Portfolio de Rodrigo Rosso | Backend Developer que une precisión técnica con visión creativa."
     />
     <title>Rodrigo Rosso | Backend Developer Creativo</title>
+
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600&display=swap"
@@ -17,186 +18,210 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-    <!-- Feather Icons CDN -->
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
+
   <body>
-    <header class="container">
-      <h1>Rodrigo Rosso</h1>
-      <p class="tagline">Pienso en sistemas, no solo en código.</p>
+    <header class="container site-header">
+      <div class="header-inner">
+        <h1 class="site-title">Rodrigo Rosso</h1>
+        <p class="tagline">Pienso en sistemas, no solo en código.</p>
+        <a
+          class="cta-button"
+          href="Rodrigo-Rosso.pdf"
+          download
+          aria-label="Descargar CV de Rodrigo Rosso"
+          >Descargar CV</a
+        >
+      </div>
     </header>
 
     <main class="container">
-      <section id="perfil">
-        <h2>Un perfil que no se encasilla</h2>
-        <p>
-          Soy desarrollador backend especializado en Python, con experiencia
-          creando APIs robustas, automatizando procesos y optimizando bases de
-          datos. Trabajo con FastAPI, Docker, Git, SQLite, MySQL y Redis, y
-          aplico metodologías como TDD, Agile y diseño RESTful. Hasta ahí, todo
-          predecible.
-        </p>
-        <p>
-          Pero lo que realmente me define no es una lista de tecnologías. Es
-          cómo pienso. Tengo una mentalidad práctica pero no conformista, veloz
-          pero con atención al detalle, estructurada pero abierta a romper
-          esquemas. Me interesa resolver problemas de raíz y aportar ideas que
-          no estaban sobre la mesa.
-        </p>
-        <p>
-          Para mí, un buen backend no solo responde rápido. Sostiene productos,
-          habilita posibilidades, y a veces, redefine lo que parecía imposible.
-          Esa es la clase de impacto que busco generar.
-        </p>
-
-        <a href="Rodrigo-Rosso.pdf" class="cta-button" download=""
-          >Descargar cv</a
-        >
-
-        <div class="details">
-          <h3>Competencias clave</h3>
-          <ul>
-            <li><strong>Lenguajes:</strong> Python, SQL</li>
-            <li><strong>Frameworks:</strong> FastAPI, Flask</li>
-            <li><strong>Bases de datos:</strong> SQLite, MySQL, Redis</li>
-            <li><strong>DevOps:</strong> Docker, Linux</li>
-            <li><strong>Versionado:</strong> Git, GitHub</li>
-            <li><strong>Metodologías:</strong> RESTful, TDD, enfoque ágil</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="proyectos">
-        <h2>Proyectos que nacen del interés genuino</h2>
-        <div class="project-grid">
-          <!-- Proyecto 1 -->
-          <a
-            href="https://rodrigonahuelr.github.io/omnitrixsimulator.github.io/"
-            target="_blank"
-            class="link-project"
-          >
-            <div class="project">
-              <img
-                src="img/omnitrix_web_thumbnail.png"
-                alt="simulador de Omnitrix"
-              />
-
-              <h3>Web simulador del Omnitrix</h3>
-              <p>
-                Una web interactiva que recrea el Omnitrix de Ben 10 con
-                animaciones, sonidos y siluetas alienígenas. HTML, CSS y JS puro
-                al servicio de una idea poco convencional, llevada a cabo con
-                precisión.
-              </p>
-            </div>
-          </a>
-
-          <!-- Proyecto 2 -->
-          <div class="project-wrapper" id="things-wrapper">
-            <div class="project" id="things-register">
-              <img src="img/thingsregister.png" alt="ThingsRegister" />
-              <h3>ThingsRegister</h3>
-              <p>
-                Aplicación de escritorio desarrollada en Python que simula una
-                bitácora personal. Simple, funcional y directa. Ideal para
-                organizar tareas sin distracciones, demostrando cómo el software
-                puede ser útil sin complicarse.
-              </p>
-            </div>
-            <div class="button-group">
-              <a
-                href="https://github.com/RodrigoNahuelR/ThingsRegister/releases/download/thingsregister/ThinsRegister-windows.exe"
-                download
-                class="cta-button"
-                title="Descargar para Windows"
-              >
-                <i class="fab fa-windows"></i> Descargar
-              </a>
-              <a
-                href="https://github.com/RodrigoNahuelR/ThingsRegister/releases/download/thingsregister/ThingsRegister-linux"
-                download
-                class="cta-button"
-                title="Descargar para Linux"
-              >
-                <i class="fab fa-linux"></i> Descargar
-              </a>
-              <a
-                href="https://github.com/RodrigoNahuelR/ThingsRegister"
-                target="_blank"
-                class="cta-button"
-                title="Repositorio en GitHub"
-              >
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
+      <section id="perfil" aria-labelledby="perfil-title">
+        <h2 id="perfil-title">Un perfil que no se encasilla</h2>
+        <div class="profile-grid">
+          <div class="profile-text">
+            <p>
+              Soy desarrollador backend especializado en Python, con experiencia
+              creando APIs robustas, automatizando procesos y optimizando bases
+              de datos. Trabajo con FastAPI, Docker, Git, SQLite, MySQL y Redis,
+              y aplico metodologías como TDD, Agile y diseño RESTful.
+            </p>
+            <p>
+              Tengo una mentalidad práctica pero no conformista: veloz con
+              atención al detalle. Me interesa resolver problemas de raíz y
+              aportar ideas que no estaban sobre la mesa.
+            </p>
+            <p>
+              Para mí, un buen backend no solo responde rápido: sostiene
+              productos y habilita posibilidades. Busco impacto técnico y claro.
+            </p>
           </div>
 
-          <!-- Proyecto 3: Product Recommender -->
-          <a
-            href="https://github.com/RodrigoNahuelR/proyecto_algoritmo_recomendacion"
-            target="_blank"
-            class="link-project"
-          >
-            <div class="project">
-              <img
-                src="img/sistema_recomendacion.png"
-                alt="Product Recommender"
-              />
-              <h3>Recomendador de Productos</h3>
-              <p>
-                Web interactiva que permite explorar productos, seleccionar uno y
-                ver recomendaciones basadas en categorías, marcas y precios. Python
-                y Streamlit, con diseño limpio y experiencia de usuario intuitiva.
-              </p>
-            </div>
-          </a>
-
-
-           <!-- Proyecto 4: SentynelMarket -->
-          <a
-            href="https://github.com/RodrigoNahuelR/SentinelMarket"
-            target="_blank"
-            class="link-project"
-          >
-            <div class="project">
-              <img
-                src="img/sistema_recomendacion.png"
-                alt="Sentinel Market"
-              />
-              <h3>SentynelMaket</h3>
-              <p>
-                Sentinel Market es un monitor inteligente de APIs financieras diseñado para detectar anomalías en tiempo real y alertar al usuario de manera eficiente. Su objetivo principal es ofrecer un seguimiento confiable de activos financieros, combinando análisis automatizado y alertas inteligentes para facilitar la toma de decisiones informadas..
-              </p>
-            </div>
-          </a>
+          <aside class="details" aria-label="Competencias clave">
+            <h3>Competencias clave</h3>
+            <ul>
+              <li><strong>Lenguajes:</strong> Python, SQL</li>
+              <li><strong>Frameworks:</strong> FastAPI, Flask</li>
+              <li><strong>Bases de datos:</strong> SQLite, MySQL, Redis</li>
+              <li><strong>DevOps:</strong> Docker, Linux</li>
+              <li><strong>Versionado:</strong> Git, GitHub</li>
+              <li><strong>Metodologías:</strong> RESTful, TDD, Agile</li>
+            </ul>
+          </aside>
         </div>
       </section>
 
-      <section id="diferencial">
-        <h2>¿Qué me diferencia?</h2>
+      <section id="proyectos" aria-labelledby="proyectos-title">
+        <h2 id="proyectos-title">Proyectos que nacen del interés genuino</h2>
+
+        <div class="project-grid" role="list">
+          <!-- Proyecto 1 -->
+          <article class="project-wrapper" role="listitem">
+            <div class="project">
+              <a
+                class="project-link"
+                href="https://rodrigonahuelr.github.io/omnitrixsimulator.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir Web simulador del Omnitrix en nueva pestaña"
+              >
+                <img
+                  src="img/omnitrix_web_thumbnail.png"
+                  alt="Captura Web simulador del Omnitrix"
+                />
+                <h3>Web simulador del Omnitrix</h3>
+              </a>
+              <p>
+                Web interactiva que recrea el Omnitrix con animaciones y
+                sonidos. HTML, CSS y JS puros, con foco en experiencia y
+                rendimiento.
+              </p>
+              <div class="meta">
+                <span class="chip">HTML |</span>
+                <span class="chip">CSS |</span>
+                <span class="chip">JS</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 2: ThingsRegister (botones ocultos por click/teclado) -->
+          <article
+            class="project-wrapper"
+            role="listitem"
+            data-toggle="buttons"
+          >
+            <div
+              class="project"
+              tabindex="0"
+              aria-label="ThingsRegister tarjeta interactiva"
+            >
+              <img src="img/thingsregister.png" alt="Captura ThingsRegister" />
+              <h3>ThingsRegister</h3>
+              <p>
+                Aplicación de escritorio en Python: una bitácora simple y
+                directa para organizar tareas sin distracciones.
+              </p>
+
+              <div class="button-group" aria-hidden="true">
+                <a
+                  class="cta-button"
+                  href="https://github.com/RodrigoNahuelR/ThingsRegister/releases/download/thingsregister/ThinsRegister-windows.exe"
+                  download
+                  ><i class="fab fa-windows" aria-hidden="true"></i
+                  ><span class="btn-text">Windows</span></a
+                >
+                <a
+                  class="cta-button"
+                  href="https://github.com/RodrigoNahuelR/ThingsRegister/releases/download/thingsregister/ThingsRegister-linux"
+                  download
+                  ><i class="fab fa-linux" aria-hidden="true"></i
+                  ><span class="btn-text">Linux</span></a
+                >
+                <a
+                  class="cta-button"
+                  href="https://github.com/RodrigoNahuelR/ThingsRegister"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fab fa-github" aria-hidden="true"></i
+                  ><span class="btn-text">GitHub</span></a
+                >
+              </div>
+              <div class="meta">
+                <span class="chip">PYTHON |</span>
+                <span class="chip">PYQTGRAPH</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 3 -->
+          <article class="project-wrapper" role="listitem">
+            <div class="project">
+              <a
+                class="project-link"
+                href="https://github.com/RodrigoNahuelR/proyecto_algoritmo_recomendacion"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="img/sistema_recomendacion.png"
+                  alt="Captura Recomendador de Productos"
+                />
+                <h3>Recomendador de Productos</h3>
+              </a>
+              <p>
+                Interfaz limpia que sugiere productos según categoría, marca y
+                precio.
+              </p>
+              <div class="meta">
+                <span class="chip">PYTHON |</span>
+                <span class="chip">STREAMLIT</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 4 -->
+          <article class="project-wrapper" role="listitem">
+            <div class="project">
+              <a
+                class="project-link"
+                href="https://github.com/RodrigoNahuelR/SentinelMarket"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="img/sentinelmarket.png"
+                  alt="Captura Sentinel Market"
+                />
+                <h3>Sentinel Market</h3>
+              </a>
+              <p>
+                Monitor inteligente de APIs financieras que detecta anomalías y
+                envía alertas vía email o webhook.
+              </p>
+              <div class="meta">
+                <span class="chip">PYTHON |</span>
+                <span class="chip">FASTAPI</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="diferencial" aria-labelledby="diferencial-title">
+        <h2 id="diferencial-title">¿Qué me diferencia?</h2>
         <p>
-          No me interesa parecerme al resto. No uso frases hechas ni busco
-          encajar en una casilla. Me interesa colaborar en proyectos donde la
-          eficiencia no esté peleada con la imaginación. Donde haya espacio para
-          cuestionar lo obvio y aportar más que líneas de código.
-        </p>
-        <p>
-          Me obsesionan las soluciones que son tan simples que parecen
-          inevitables. Las que mejoran no solo la funcionalidad, sino también la
-          experiencia. Las que dejan huella.
-        </p>
-        <p>
-          Si estás buscando a alguien que solo cumpla órdenes, quizás no soy la
-          mejor opción. Si buscás a alguien que desafíe lo establecido con
-          lógica, compromiso y una visión técnica sólida, probablemente sí.
+          No me interesa parecerme al resto. Busco colaborar en proyectos donde
+          la eficiencia conviva con la imaginación, y en los que haya espacio
+          para cuestionar lo obvio y aportar soluciones limpias y duraderas.
         </p>
       </section>
 
-      <section id="contacto">
-        <h2>Contacto</h2>
+      <section id="contacto" aria-labelledby="contacto-title">
+        <h2 id="contacto-title">Contacto</h2>
         <p>
-          ¿Una idea? ¿Un desafío técnico? ¿Una colaboración inesperada?<br />Estoy
-          abierto a lo que venga con sentido.
+          ¿Una idea? ¿Un desafío técnico? Estoy abierto a colaboraciones con
+          sentido.
         </p>
         <ul class="contact-list">
           <li>
@@ -207,7 +232,10 @@
           </li>
           <li>
             GitHub:
-            <a href="https://github.com/RodrigoNahuelR" target="_blank"
+            <a
+              href="https://github.com/RodrigoNahuelR"
+              target="_blank"
+              rel="noopener noreferrer"
               >github.com/RodrigoNahuelR</a
             >
           </li>
@@ -216,6 +244,7 @@
             <a
               href="https://www.linkedin.com/in/rodrigo-rosso-8a0a3b230/"
               target="_blank"
+              rel="noopener noreferrer"
               >linkedin.com/in/rodrigo_rosso</a
             >
           </li>
@@ -223,13 +252,15 @@
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2025 Rodrigo Rosso</p>
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2025 Rodrigo Rosso</p>
+      </div>
     </footer>
 
     <script src="scripts.js"></script>
     <script>
-      feather.replace(); // Inicializa los iconos feather
+      feather.replace();
     </script>
   </body>
 </html>
